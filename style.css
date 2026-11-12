@@ -1,0 +1,190 @@
+
+#main-container{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(max-content,200px) 3fr ;
+}
+#sidebar{
+    background-color: rgb(255, 162, 162);
+    display: grid;
+    gap:20px;
+    grid-template-rows: max-content 2fr 1fr 2fr ;
+    grid-template-areas: "title"
+                        "general-buttons"
+                        "."
+                        "support-buttons";
+    padding: 10px;
+                        
+}
+#general-btns{
+    grid-area: general-buttons;
+    background-color: rgb(199, 183, 255);
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    justify-content: center;
+}
+#support-btns{
+    grid-area: support-buttons;
+    background-color: rgb(199, 183, 255);
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    justify-content: flex-start;
+}
+#icon{
+    grid-area: title;
+    display: flex;
+    flex-basis: row;
+    font-size: 1.5rem;
+    justify-content: baseline;
+    background-color: rgb(199, 183, 255);
+}
+#icon>img{
+    width:clamp(50px,40%,150px);
+    height:clamp(50px,40%,150px);
+    
+}
+#content{
+    background-color: rgb(255, 185, 119);
+    display: grid;
+    gap: 10px;
+
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr ;
+    grid-template-areas: "search search"
+                            "welcome welcome"
+                            "projects announcements"
+                            "projects announcements"
+                            "projects announcements"
+                            "projects trending"
+                            "projects trending"
+                            "projects trending";
+}
+.section-title{
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+#search{
+    background-color: rgb(244, 241, 151);
+    grid-area: search;
+}
+#welcome{
+    background-color: rgb(178, 248, 176);
+    grid-area: welcome;
+}
+#announcements,#trending,#projects{
+    display: grid;
+    grid-template-rows: max-content 1fr ;
+}
+#projects{
+    background-color: rgb(119, 122, 180);
+    grid-area: projects;
+}
+#projects-content{
+    background-color: aliceblue;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(min-content,250px));
+    gap: 10px;
+
+}
+.project-card{
+    min-width: 200px;
+    min-height: 150px;
+    margin: 0;
+    background-color: hotpink;
+    display: flex;
+    flex-flow: column wrap;
+    border-radius: 5px;
+    
+}
+.card-decor{
+    background-color: aqua;
+    flex: 1;
+    width: 100%;
+    height: 9px;
+}
+.card-content{
+    text-align: center;
+    flex: 1;
+}
+.card-icons{
+   flex: 1;
+
+     
+}
+
+#ann-content, #trending-content{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 10px;
+    background-color: honeydew;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+#announcements{
+    background-color: rgb(172, 180, 255);
+    grid-area: announcements;
+    
+    
+}
+.ann-heading{
+    font-weight: bolder;
+    
+}
+.ann-item{
+    border-bottom: 1px solid black;
+}
+
+#trending{
+    background-color: rgb(19, 99, 169);
+    grid-area: trending;
+   
+}
+
+.trend-grid{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: repeat(2,max-content);
+    grid-template-areas: "image at"
+                        "image name";
+    
+    padding: 5px;
+    column-gap: 10px;
+    flex: 1;
+    
+    
+   
+}
+.trend-grid .trend-image{
+    grid-area: image;
+    background-color: aquamarine;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    
+   
+}
+.trend-grid .trend-at{
+    grid-area: at;
+    justify-self: start;
+    
+    
+}
+.trend-grid .trend-name{
+    grid-area: name;
+    justify-self: start;
+    align-self: self-start;
+    
+    
+}
+.trend-at, .trend-name{
+    margin: 0;
+    padding: 0;
+
+}
