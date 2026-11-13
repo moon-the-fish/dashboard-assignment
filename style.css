@@ -9,7 +9,7 @@
     background-color: rgb(255, 162, 162);
     display: grid;
     gap:20px;
-    grid-template-rows: max-content 2fr 1fr 2fr ;
+    grid-template-rows: max-content max-content 100px 1fr ;
     grid-template-areas: "title"
                         "general-buttons"
                         "."
@@ -23,8 +23,9 @@
     display: flex;
     flex-flow: column;
     gap: 10px;
-    justify-content: center;
+    justify-content: flex-start;
 }
+
 #support-btns{
     grid-area: support-buttons;
     background-color: rgb(199, 183, 255);
@@ -36,7 +37,7 @@
 #icon{
     grid-area: title;
     display: flex;
-    flex-basis: row;
+    flex-flow: row;
     font-size: 1.5rem;
     justify-content: baseline;
     background-color: rgb(199, 183, 255);
@@ -52,7 +53,7 @@
     gap: 10px;
 
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr ;
+    grid-template-rows: max-content max-content 2fr 2fr 2fr 2fr 2fr 2fr ;
     grid-template-areas: "search search"
                             "welcome welcome"
                             "projects announcements"
@@ -67,17 +68,117 @@
     font-size: 1.5rem;
 }
 #search{
-    background-color: rgb(244, 241, 151);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+   
+    gap: 10px;
+    background-color: rgb(254, 219, 255);
+}
+#search{
+    
     grid-area: search;
+    
+}
+#search-sec, #search-icons{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+    margin: 0;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    justify-content: flex-start;
+}
+
+#search-box{
+    flex: 1;
+}
+#search-in{
+    width: 100%;
+    border-radius: 5px;
+    border-color: white;
+}
+#bell, #magnify{
+    width:20px;
+    height: 20px;
+    
+}
+#profile{
+    
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+}
+#profile-name{
+    flex: 1 1 auto;
+    width:150px;
+    margin:10px
+    
+}
+#bell{
+    margin-right:10px ;
 }
 #welcome{
-    background-color: rgb(178, 248, 176);
     grid-area: welcome;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   
+    gap: 10px;
+    background-color: rgb(254, 219, 255);
+}
+#welcome-info{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: repeat(2,max-content);
+    grid-template-areas: "wel-image hi"
+                        "wel-image name";
+    padding-left:15px;
+    column-gap: 10px;
+}
+#hi{
+    
+    grid-area: hi;
+    
+}
+#welcome-name{
+    font-weight: 300;
+    font-size: 1.5rem;
+    grid-area: name;
+}
+
+#welcome-image{
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    grid-area: wel-image;
+}
+#welcome-buttons{
+    
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 10px;
+   
+}
+#welcome-buttons > *{
+    flex: 1 1 50px ;
+    
+    height: 50px;
+    border-radius: 10px;
+    min-width:50px;
+    max-width:100px;
+
+
+    
 }
 #announcements,#trending,#projects{
     display: grid;
     grid-template-rows: max-content 1fr ;
+
 }
+
 #projects{
     background-color: rgb(119, 122, 180);
     grid-area: projects;
@@ -85,33 +186,47 @@
 #projects-content{
     background-color: aliceblue;
     padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(min-content,250px));
-    gap: 10px;
+    
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    align-content: flex-start;
 
 }
 .project-card{
-    min-width: 200px;
+    
+    max-width: 350px;
     min-height: 150px;
+    height: 350px;
+
     margin: 0;
     background-color: hotpink;
-    display: flex;
-    flex-flow: column wrap;
     border-radius: 5px;
+
+    flex: 1 1 auto;
+
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    grid-template-rows: max-content 1fr max-content;
+    grid-template-areas: "decor heading"
+                        "decor content"
+                        "decor icons";
+    gap: 15px;
     
 }
 .card-decor{
     background-color: aqua;
-    flex: 1;
-    width: 100%;
-    height: 9px;
+    grid-area: decor;
 }
 .card-content{
-    text-align: center;
-    flex: 1;
+    grid-area: content;
+    
+    
 }
+
 .card-icons{
-   flex: 1;
+   grid-area: icons;
+   justify-self: right;
 
      
 }
@@ -129,16 +244,20 @@
 
 #announcements{
     background-color: rgb(172, 180, 255);
-    grid-area: announcements;
-    
-    
-}
-.ann-heading{
-    font-weight: bolder;
+    grid-area: announcements;  
     
 }
+
 .ann-item{
     border-bottom: 1px solid black;
+    display: flex;
+    flex-flow: column;
+}
+.ann-item >*{
+    flex: 1;
+}
+.ann-heading{
+    font-weight: bolder;   
 }
 
 #trending{
@@ -148,6 +267,7 @@
 }
 
 .trend-grid{
+    max-height: max-content;
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: repeat(2,max-content);
@@ -159,11 +279,12 @@
     flex: 1;
     
     
+    
    
 }
 .trend-grid .trend-image{
     grid-area: image;
-    background-color: aquamarine;
+    background-color: rgb(226, 226, 226);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -183,7 +304,7 @@
     
     
 }
-.trend-at, .trend-name{
+.trend-at, .trend-name, #welcome-name,#hi{
     margin: 0;
     padding: 0;
 
