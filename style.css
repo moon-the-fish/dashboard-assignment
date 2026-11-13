@@ -1,12 +1,33 @@
+:root{
+    --background-color:rgb(255, 254, 245);
+    --card-bkg-col:rgb(255, 249, 235);
+    --important-text:#320A28;
+    --main-blue:rgb(155,196,216);
+    --other-blue:rgb(155,196,216);
+    --dark-blue:rgb(102, 165, 195);
+    --main-yellow:rgb(248, 201, 96);
+    --main-whitish:rgb(245, 247, 252);
+    --shadow-col:rgb(229, 227, 214);
+    --side-bkg:#511730;
+    --side-btn-col:var(--card-bkg-col);
+    --section-title-col:#1D3557;
+};
+html{
+    background-color: var(--main-blue);
+}
 
 #main-container{
+    position: relative;
+    background-color: var(--background-color);
     min-width: 100vw;
     min-height: 100vh;
     display: grid;
     grid-template-columns: minmax(max-content,200px) 3fr ;
 }
 #sidebar{
-    background-color: rgb(255, 162, 162);
+    position: relative;
+    z-index: 1;
+    background-color: var(--side-bkg);
     display: grid;
     gap:20px;
     grid-template-rows: max-content max-content 100px 1fr ;
@@ -14,21 +35,27 @@
                         "general-buttons"
                         "."
                         "support-buttons";
-    padding: 10px;
+    padding-right: 60px;
+    padding-top: 30px;
                         
 }
 #general-btns{
     grid-area: general-buttons;
-    background-color: rgb(199, 183, 255);
+    
     display: flex;
     flex-flow: column;
     gap: 10px;
     justify-content: flex-start;
 }
-
+#general-btns > button, #support-btns >button{
+    background-color:var(--side-bkg) ;
+    border: none;
+    color: var(--side-btn-col);
+    font-size: 1.1rem;
+}
 #support-btns{
     grid-area: support-buttons;
-    background-color: rgb(199, 183, 255);
+    
     display: flex;
     flex-flow: column;
     gap: 10px;
@@ -40,7 +67,8 @@
     flex-flow: row;
     font-size: 1.5rem;
     justify-content: baseline;
-    background-color: rgb(199, 183, 255);
+    color: var(--side-btn-col);
+    
 }
 #icon>img{
     width:clamp(50px,40%,150px);
@@ -48,10 +76,17 @@
     
 }
 #content{
-    background-color: rgb(255, 185, 119);
+    border: 2px solid var(--main-whitish);
+    box-shadow: -2px 2px 5px 1px var(--dark-blue);
+    position: relative;
+    z-index: 2;
+    right: 5px;
+    background-color: var(--background-color);
+    padding-left: 20px;
     display: grid;
     gap: 10px;
-
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: max-content max-content 2fr 2fr 2fr 2fr 2fr 2fr ;
     grid-template-areas: "search search"
@@ -64,15 +99,19 @@
                             "projects trending";
 }
 .section-title{
-    color: aliceblue;
+    color: var(--section-title-col);
     font-size: 1.5rem;
+    font-weight:bolder;
 }
 #search{
+    margin-top: 30px;
+    
+    
     display: grid;
     grid-template-columns: 1fr max-content;
    
     gap: 10px;
-    background-color: rgb(254, 219, 255);
+    
 }
 #search{ 
     grid-area: search;   
@@ -93,13 +132,18 @@
     flex: 1;
 }
 #search-in{
+    border: 2px solid var(--dark-blue);
+    height: 30px;
     width: 100%;
-    border-radius: 5px;
-    border-color: white;
+    border-radius: 8px;
+    border-color: var(--main-yellow);
+    color: var(--dark-blue);
+    background-color: var(--card-bkg-col);
+    
 }
 #bell, #magnify{
     width:20px;
-    height: 20px;
+    height: 25px;
     
 }
 #profile{
@@ -121,9 +165,10 @@
     grid-area: welcome;
     display: grid;
     grid-template-columns: repeat(2,minmax(min-content,1fr));
-    
+    border-bottom: 2px solid var(--dark-blue);
     gap: 10px;
-    background-color: rgb(254, 219, 255);
+    
+    
 }
 #welcome-info{
     display: grid;
@@ -153,7 +198,7 @@
     margin-top: 5px;
 }
 #welcome-buttons{
-    
+    align-content: flex-start;
     display: flex;
     flex-flow: row wrap;
     gap: 10px;
@@ -163,8 +208,11 @@
 }
 #welcome-buttons > *{
     flex: 1 1 50px ;
-    
-    height: 50px;
+    color: var(--main-yellow);
+    background-color: var(--background-color);
+    border: 2px solid var(--main-yellow);
+    box-shadow: 3px 3px 0 2px var(--shadow-col);
+    height: 30px;
     border-radius: 10px;
     min-width:50px;
     max-width:100px;
@@ -179,11 +227,11 @@
 }
 
 #projects{
-    background-color: rgb(119, 122, 180);
+    margin-top: 50px;
     grid-area: projects;
 }
 #projects-content{
-    background-color: aliceblue;
+    
     padding: 10px;
     
     display: flex;
@@ -197,15 +245,16 @@
     max-width: 350px;
     min-height: 150px;
     height: 350px;
-
+    
     margin: 0;
-    background-color: hotpink;
+    background-color: var(--card-bkg-col);
     border-radius: 5px;
-
+    box-shadow: -3px 3px 3px 2px var(--other-blue)
+     ;
     flex: 1 1 auto;
 
     display: grid;
-    grid-template-columns: 10px 1fr;
+    grid-template-columns: 30px 1fr;
     grid-template-rows: max-content 1fr max-content;
     grid-template-areas: "decor heading"
                         "decor content"
@@ -214,13 +263,24 @@
     
 }
 .card-decor{
-    background-color: aqua;
+   
     grid-area: decor;
+    background-color: var(--card-bkg-col);
+background-image: linear-gradient(45deg, #9bc4d880 25%, transparent 25%, transparent 75%, #9bc4d880 75%), linear-gradient(45deg, #9bc4d880 25%, transparent 25%, transparent 75%, #9bc4d880 75%);
+background-position: 10px 10px, 20px 20px;
+background-size: 20px 20px;
+
 }
 .card-content{
     grid-area: content;
     
     
+}
+.project-heading, .ann-heading{
+    color: var(--important-text);
+    font-weight: 200;
+    font-size: 1.2em;
+   
 }
 
 .card-icons{
@@ -236,13 +296,15 @@
     justify-content: flex-start;
     text-align: center;
     padding: 10px;
-    background-color: honeydew;
+    
+    background-color: var(--card-bkg-col);
+    box-shadow: -3px 3px 3px 2px rgb( 229, 227, 214) ;
     border-radius: 5px;
     gap: 15px;
 }
 
 #announcements{
-    background-color: rgb(172, 180, 255);
+   margin-top: 50px;
     grid-area: announcements;  
     
 }
@@ -257,10 +319,11 @@
 }
 .ann-heading{
     font-weight: bolder;   
+    
 }
 
 #trending{
-    background-color: rgb(19, 99, 169);
+    height: max-content;
     grid-area: trending;
    
 }
@@ -283,7 +346,7 @@
 }
 .trend-grid .trend-image{
     grid-area: image;
-    background-color: rgb(226, 226, 226);
+    
     border-radius: 50%;
     width: 50px;
     height: 50px;
