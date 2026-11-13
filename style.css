@@ -74,10 +74,8 @@
     gap: 10px;
     background-color: rgb(254, 219, 255);
 }
-#search{
-    
-    grid-area: search;
-    
+#search{ 
+    grid-area: search;   
 }
 #search-sec, #search-icons{
     display: flex;
@@ -122,14 +120,14 @@
 #welcome{
     grid-area: welcome;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-   
+    grid-template-columns: repeat(2,minmax(min-content,1fr));
+    
     gap: 10px;
     background-color: rgb(254, 219, 255);
 }
 #welcome-info{
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: max-content auto;
     grid-template-rows: repeat(2,max-content);
     grid-template-areas: "wel-image hi"
                         "wel-image name";
@@ -152,6 +150,7 @@
     height:60px;
     border-radius: 50%;
     grid-area: wel-image;
+    margin-top: 5px;
 }
 #welcome-buttons{
     
