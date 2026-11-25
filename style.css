@@ -1,22 +1,26 @@
+
 :root{
     --background-color:rgb(255, 254, 245);
     --card-bkg-col:rgb(255, 249, 235);
-    --important-text:#320A28;
+    --important-text:#172e35;
     --main-blue:rgb(155,196,216);
     --other-blue:rgb(155,196,216);
     --dark-blue:rgb(102, 165, 195);
     --main-yellow:rgb(248, 201, 96);
     --main-whitish:rgb(245, 247, 252);
     --shadow-col:rgb(229, 227, 214);
-    --side-bkg:#511730;
-    --side-btn-col:var(--card-bkg-col);
-    --section-title-col:#1D3557;
-};
-html{
-    background-color: var(--main-blue);
+    --side-bkg:rgb(37, 73, 85);
+    --side-btn-col:#d9d8d0;
+    --section-title-col:#336575;
+    --bottom-line-top:#386e80;
+    background-color: var(--side-bkg);
+   
+}
+#icon:hover, #welcome-buttons > button:hover, .project-card:hover {
+    cursor: pointer;
 }
 
-#main-container{
+body{
     position: relative;
     background-color: var(--background-color);
     min-width: 100vw;
@@ -35,7 +39,7 @@ html{
                         "general-buttons"
                         "."
                         "support-buttons";
-    padding-right: 60px;
+    
     padding-top: 30px;
                         
 }
@@ -47,11 +51,54 @@ html{
     gap: 10px;
     justify-content: flex-start;
 }
-#general-btns > button, #support-btns >button{
+#icon{
+    padding-right: 40px;
+}
+#icon:hover{
+    color: var(--main-whitish);
+}
+.g-button, .s-button{
     background-color:var(--side-bkg) ;
     border: none;
     color: var(--side-btn-col);
     font-size: 1.1rem;
+}
+.side-btn-div{
+    margin-bottom: 10px;
+    padding-left: 30px;
+    display: flex;
+    flex-flow: row;
+    gap: 10px;
+    box-sizing: border-box;
+    transition:all 200ms ;
+    
+}
+
+.side-btn-div:hover, .clicked-side {
+    background-color: var(--important-text);
+    padding-top: 5px;
+    padding-bottom: 10px;
+    height: 40px;
+    margin-left: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius:15px ;
+    box-shadow: -2px 1px 3px 0 var(--main-blue);
+   
+    
+}
+
+.side-btn-div > *{
+    margin: 0;
+    background-color: inherit;
+
+}
+
+.button-icon{
+    height: 25px;
+    width: 25px;
+    
+    
+    
 }
 #support-btns{
     grid-area: support-buttons;
@@ -77,7 +124,8 @@ html{
 }
 #content{
     border: 2px solid var(--main-whitish);
-    box-shadow: -2px 2px 5px 1px var(--dark-blue);
+    box-shadow: -2px 2px 5px 1px var(--dark-blue),
+                -2px -2px 5px 1px var(--dark-blue);
     position: relative;
     z-index: 2;
     right: 5px;
@@ -101,12 +149,12 @@ html{
 .section-title{
     color: var(--section-title-col);
     font-size: 1.5rem;
-    font-weight:bolder;
+    margin-bottom: 20px;
+    font-weight: bolder;
 }
 #search{
     margin-top: 30px;
-    
-    
+
     display: grid;
     grid-template-columns: 1fr max-content;
    
@@ -137,7 +185,7 @@ html{
     width: 100%;
     border-radius: 8px;
     border-color: var(--main-yellow);
-    color: var(--dark-blue);
+    color: var(--section-title-col);
     background-color: var(--card-bkg-col);
     
 }
@@ -162,10 +210,11 @@ html{
     margin-right:10px ;
 }
 #welcome{
+    margin-top: 20px;
     grid-area: welcome;
     display: grid;
     grid-template-columns: repeat(2,minmax(min-content,1fr));
-    border-bottom: 2px solid var(--dark-blue);
+    border-bottom: 2px solid var(--bottom-line-top);
     gap: 10px;
     
     
@@ -178,16 +227,19 @@ html{
                         "wel-image name";
     padding-left:15px;
     column-gap: 10px;
+    font-family: var(--important-font-family);
+    
+    
 }
 #hi{
-    
+    font-size: 1rem;
     grid-area: hi;
     
 }
 #welcome-name{
-    font-weight: 300;
     font-size: 1.5rem;
     grid-area: name;
+    
 }
 
 #welcome-image{
@@ -211,15 +263,33 @@ html{
     color: var(--main-yellow);
     background-color: var(--background-color);
     border: 2px solid var(--main-yellow);
-    box-shadow: 3px 3px 0 2px var(--shadow-col);
+    box-shadow: 3px 3px 0 0 var(--shadow-col);
     height: 30px;
     border-radius: 10px;
+    
     min-width:50px;
-    max-width:100px;
+    max-width:100px;  
+    transition:all 100ms ;
+}
 
+#welcome-buttons > button:hover, #welcome-buttons > button:focus{
+    background-color: var(--main-yellow);
+    color: var(--card-bkg-col);
+    
+    
+    
+    
 
     
 }
+ #welcome-buttons > button:focus{
+    box-shadow: inset 3px 3px var(--card-bkg-col),
+                inset -3px -3px var(--card-bkg-col)
+    ;
+   
+   
+
+ }
 #announcements,#trending,#projects{
     display: grid;
     grid-template-rows: max-content 1fr ;
@@ -243,8 +313,8 @@ html{
 .project-card{
     
     max-width: 350px;
-    min-height: 150px;
-    height: 350px;
+    min-height:max-content;
+    height: 250px;
     
     margin: 0;
     background-color: var(--card-bkg-col);
@@ -261,6 +331,10 @@ html{
                         "decor icons";
     gap: 15px;
     
+}
+.project-card:hover{
+    padding: 3px;
+    border:3px solid var(--main-whitish);
 }
 .card-decor{
    
@@ -286,8 +360,23 @@ background-size: 20px 20px;
 .card-icons{
    grid-area: icons;
    justify-self: right;
+   
+   margin-bottom: 15px;
+   margin-right: 10px;
+   
+
 
      
+}
+.card-img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    margin-left: 15px;
+}
+.card-img:hover, #search-in:hover{
+    opacity: 1;
+    padding: 5px;
 }
 
 #ann-content, #trending-content{
@@ -318,13 +407,14 @@ background-size: 20px 20px;
     flex: 1;
 }
 .ann-heading{
-    font-weight: bolder;   
+      font-weight: bolder;
     
 }
 
 #trending{
     height: max-content;
     grid-area: trending;
+    margin-top: 25px;
    
 }
 

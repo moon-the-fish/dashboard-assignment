@@ -5,29 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
    
 </head>
 <body>
-    <div id="main-container">
+    
         <div id="sidebar">
             <div id="icon">
-                <img src="view-dashboard.svg" alt="dashboard icon">
+                <img src="icons/view-dashboard.svg" alt="dashboard icon">
                 <p id="title">Dashboard</p>
 
             </div>
             <div id="general-btns">
-                <button>Home</button>
-                <button>Profile</button>
-                <button>Messages</button>
-                <button>History</button>
-                <button>Tasks</button>
-                <button>Community</button>
+                <div class="side-btn-div clicked-side">
+                <img class="button-icon" src="icons/home.svg">
+                <button class="g-button">Home</button>
+                </div>
+                <div class="side-btn-div">
+                    <img class="button-icon" src="icons/profile.svg">
+                    <button class="g-button">Profile</button>
+                </div>
+                <div class="side-btn-div">
+                    <img class="button-icon"  src="icons/messages.svg">
+                    <button class="g-button">Messages</button>
+                </div>
+                <div class="side-btn-div">
+                    <img class="button-icon" src="icons/history.svg">
+                    <button class="g-button">History</button>
+                </div>
+                <div class="side-btn-div">
+                    <img class="button-icon" src="icons/tasks.svg">
+                    <button class="g-button">Tasks</button>
+                </div>
+                <div class="side-btn-div">
+                    <img class="button-icon" src="icons/community.svg">
+                    <button class="g-button">Community</button>
+                </div>
 
             </div>
             <div id="support-btns">
-                <button>Settings</button>
-                <button>Support</button>
-                <button>Privacy</button>
+                <div class="side-btn-div"
+                >
+                <img class="button-icon" src="icons/settings.svg">
+                <button class="s-button">Settings</button>
+                </div>
+                <div class="side-btn-div">
+                    <img class="button-icon" src="icons/support.svg">
+                    <button class="s-button">Support</button
+                    ></div>
+                <div class="side-btn-div">
+                    <img class="button-icon" src="icons/support.svg">
+                    <button class="s-button">Privacy</button></div>
 
             </div>
         
@@ -35,22 +63,22 @@
         <div id="content">
             <div id="search">
                 <div id="search-sec">
-                    <img id="magnify" src="magnify.svg">
+                    <img id="magnify" src="icons/magnify.svg">
                     <search id="search-box">
                         <input placeholder="Search" type="search" id="search-in">
                     </search>
                 </div>
             <div id="search-icons">
-                <img id="bell" src="bell-ring-outline.svg">
-                <img id="profile" src="bruno.jpeg">
-                <p id="profile-name">Bruno Bucceirati</p>
+                <img id="bell" src="icons/bell-ring-outline.svg">
+                <img id="profile" src="images/bruno.jpeg">
+                <p id="profile-name">Bruno Bucciarati</p>
                 
 
             </div>
             </div>
             <div id="welcome">
                 <div id="welcome-info">
-                    <img id="welcome-image" src="bruno.jpeg">
+                    <img id="welcome-image" src="images/bruno.jpeg">
                     <p id="hi">Hi there, </p>
                     <p id="welcome-name"> Bruno Bucciarati (@Bruno)</p>
                 </div>
@@ -72,61 +100,83 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         </p>
                         </div>
-                        <div class="card-icons">bbbbbbbb</div>
+                        <div class="card-icons"> <img class="card-img" src="icons/star-check-outline.svg">
+                            <img class="card-img" src="icons/eye-plus-outline.svg">
+                            <img class="card-img" src="icons/source-branch.svg" ></div>
                         
 
                     </div>
                     <div class="project-card">
                         <div class="card-decor"></div>
                         <div class="card-content">
-                        <p class="project-heading"> Golden Wind</p>
+                        <p class="project-heading"> Steel Ball Run</p>
                         <p class="project-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         </p>
                         </div>
-                        <div class="card-icons"></div>
+                        <div class="card-icons">
+                             <img class="card-img" src="icons/star-check-outline.svg">
+                            <img class="card-img" src="icons/eye-plus-outline.svg">
+                            <img class="card-img" src="icons/source-branch.svg" >
+                        </div>
                         
                     </div>
                     <div class="project-card">
                         <div class="card-decor"></div>
                         <div class="card-content">
-                        <p class="project-heading"> Golden Wind</p>
+                        <p class="project-heading"> Stone Ocean</p>
                         <p class="project-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         </div>
-                        <div class="card-icons"></div>
+                        <div class="card-icons">
+                            <img class="card-img" src="icons/star-check-outline.svg">
+                            <img class="card-img" src="icons/eye-plus-outline.svg">
+                            <img class="card-img" src="icons/source-branch.svg" >
+                        </div>
                         
                     </div>
                     <div class="project-card">
                         <div class="card-decor"></div>
                         <div class="card-content">
-                        <p class="project-heading"> Golden Wind</p>
+                        <p class="project-heading"> Diamond is Unbreakable</p>
                         <p class="project-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         </p>
                         </div>
-                        <div class="card-icons"></div>
+                        <div class="card-icons">
+                             <img class="card-img" src="icons/star-check-outline.svg">
+                            <img class="card-img" src="icons/eye-plus-outline.svg">
+                            <img class="card-img" src="icons/source-branch.svg" >
+                        </div>
                         
                     </div>
                     <div class="project-card">
                         <div class="card-decor"></div>
                         <div class="card-content">
-                        <p class="project-heading"> Golden Wind</p>
+                        <p class="project-heading"> Phantom Blood</p>
                         <p class="project-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         </p>
                         </div>
-                        <div class="card-icons"></div>
+                        <div class="card-icons">
+                             <img class="card-img" src="icons/star-check-outline.svg">
+                            <img class="card-img" src="icons/eye-plus-outline.svg">
+                            <img class="card-img" src="icons/source-branch.svg" >
+                        </div>
                         
                     </div>
                     <div class="project-card">
                         <div class="card-decor"></div>
                         <div class="card-content">
-                        <p class="project-heading"> Golden Wind</p>
+                        <p class="project-heading"> Battle Tendency</p>
                         <p class="project-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         </div>
-                        <div class="card-icons"></div>
+                        <div class="card-icons">
+                             <img class="card-img" src="icons/star-check-outline.svg">
+                            <img class="card-img" src="icons/eye-plus-outline.svg">
+                            <img class="card-img" src="icons/source-branch.svg" >
+                        </div>
                         
                     </div>
 
@@ -137,7 +187,7 @@
                 <div  class="section-title">Announcements</div>
                 <div id="ann-content">
                     <div class="ann-item">
-                        <p class="ann-heading">Bruno Buccerati new Capo</p>
+                        <p class="ann-heading">Spinning Spinning (⊙_◎) </p>
                         <p class="ann-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -146,7 +196,7 @@
                         </p>
                     </div>
                     <div class="ann-item">
-                        <p class="ann-heading">Dirty Deeds done dirt cheap</p>
+                        <p class="ann-heading">Dirty Deeds Done Dirt Cheap ヽ(°〇°)ﾉ</p>
                         <p class="ann-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -156,7 +206,7 @@
                         </p>
                     </div>
                     <div class="ann-item">
-                        <p class="ann-heading">Mistaaaa~~</p>
+                        <p class="ann-heading">Mistaaaa~~(⌒‿⌒)</p>
                         <p class="ann-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -170,28 +220,28 @@
                 <div class="section-title">Trending</div>
                 <div id="trending-content">
                     <div class="trend-grid">
-                        <img class="trend-image" src="guido mista.jpeg" alt="">
+                        <img class="trend-image" src="images/guido mista.jpeg" alt="">
                         <p class="trend-at">@SexPistols</p>
                         <p class="trend-name">Guido Mista</p>
                     </div>
                     <div class="trend-grid">
-                        <img class="trend-image" src="trish.jpeg" alt="">
+                        <img class="trend-image" src="images/trish.jpeg" alt="">
                         <p class="trend-at">@SpiceGirl</p>
                         <p class="trend-name">Trish Una</p>
                     </div>
                     <div class="trend-grid">
-                        <img class="trend-image" src="bruno.jpeg" alt="">
+                        <img class="trend-image" src="images/bruno.jpeg" alt="">
                         <p class="trend-at">@StickyFingers</p>
                         <p class="trend-name">Bruno Bucciarati</p>
                     </div>
                     <div class="trend-grid">
-                        <img class="trend-image" src="giorno.jpg" alt="">
+                        <img class="trend-image" src="images/giorno.jpg" alt="">
                         <p class="trend-at">@GoldenExperience</p>
                         <p class="trend-name">Giorno Giovanna </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    
 </body>
 </html>
